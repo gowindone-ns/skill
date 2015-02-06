@@ -1,0 +1,14 @@
+<div>
+
+	<div>
+		<input data-ng-model="searchInResult">
+	</div>
+	
+	<table>
+		<tr data-ng-repeat="result in searchResult | filter:searchInResult">
+			<td data-ng-repeat="key in resultCol" > {{result[key]}} </td>
+		</tr>
+	</table>
+
+
+</div>

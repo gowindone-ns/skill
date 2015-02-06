@@ -1,0 +1,27 @@
+<div>
+	<div>
+		<input data-ng-repeat="filterColumn in searchColumnsAndUrls"
+			data-ng-model="filterColumn.name"
+			data-ng-blur="onsearch(filterColumn.url + filterColumn.name)" />
+
+
+	</div>
+	<div>
+		<input data-ng-model="searchInResult">
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-4 col-md-2"
+				data-ng-repeat="resultColumn in searchResultColumns">{{resultColumn.displayName}}</div>
+		</div>
+
+
+		<div class="row"
+			data-ng-repeat="result in searchResult | filter:searchInResult">
+			<div class="col-xs-4 col-md-2"
+				data-ng-repeat="key in searchResultColumns"
+				data-ng-click="onResultRowClick(result)">{{result[key.name]}}</div>
+		</div>
+	</div>
+
+</div>
